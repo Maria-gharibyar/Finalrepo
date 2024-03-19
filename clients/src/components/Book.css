@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Montserrat&family=Sarina&display=swap');
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:  #333333;
+    margin-top: 100px;
+    
+}
+.row{
+  
+   width: 60vw;
+   
+}
+textarea{
+    height: 100px;
+}
+input:focus,textarea{
+    outline: none;
+   
+}
+input{
+    border: 1px solid lightgray;
+    height: 10vh;
+}
+input:hover ,textarea:hover{
+    outline: none;
+    border: 1px solid rgb(41, 145, 249);
+    box-shadow: 0 0 2px 0px  rgb(41, 145, 249);;
+}
+thead{
+  border-bottom: 1px solid #333333;
+   font-size: bold;
+  
+}
+.Delete{
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.title{
+    font-size: 1.1rem;
+    padding-bottom: 20px;
+}
+
+.all{
+    border: 1px solid  rgb(249, 83, 41);
+    width: 60vw;
+    height: 50vh;
+    text-align: center;
+    padding-top: 60px;
+    
+}
+.btn_delete{
+    width: 40vw;
+    height: 10vh;
+    background-color: red;
+    color: white;
+    margin-top: 50px;
+    outline: none;
+    border: none;
+   
+}
+.btn_delete:hover{
+    background-color: rgb(216, 11, 11);
+    color: white;
+}
+.input-error{
+    border: 1px solid red;
+}
+.img_container{
+    background: url('../assets/6786758.jpg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+  
+}
+.nav{
+    width: 100vw;
+    margin-top: 40px;
+  
+
+}
+.navbar-nav {
+list-style-type: none; 
+display: flex; 
+flex-direction: row;
+margin-left: auto;
+
+   
+  }
+  .nav-item {
+   color: #f89f06;
+   text-transform: uppercase;
+  
+ }
+ .nav-link{
+    margin-right: 100px;
+    padding: 10px;
+ }
+ .nav-link:hover{
+    background-color: #e19614;
+    color: white;
+    border-radius: 10px
+   
+ }
+ .sign{
+    background-color: #f89f06;
+    color: white;
+    padding: 10px;
+    border-radius: 10px
+ }
+ .title{
+font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  color: #f89f06;
+ }
+ .bodv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   line-height: 3;
+   position: absolute;
+   top:40%;
+   left: 12%;
+    
+ }
+ .book{
+    color: rgb(18, 70, 202);
+    margin-top: -20px;
+ }
+ .paragraph{
+    line-height: 2;
+    width: 45vw;
+ }
+  
