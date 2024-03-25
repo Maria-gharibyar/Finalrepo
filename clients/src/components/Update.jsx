@@ -2,6 +2,8 @@ import { useEffect,useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Logout from "./Logout";
+import { Link } from "react-router-dom";
 const Update=()=>{
     const navigate = useNavigate();
     const { id } = useParams();
@@ -11,37 +13,43 @@ const Update=()=>{
     const [language,setLanguage]=useState('')
     const [Descriptions,setDescriptions]=useState('')
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/book/${id}`)
+        axios.get(`http://localhost:8000/api/book/${id}`,{withCredentials:true})
           .then((res) => {
-            const { title, author, publishYera, language, Descriptions } = res.data;
-            settitle(title || '');
-            setAuthor(author || '');
-            setpublishYera(publishYera || ''); 
-            setDescriptions(Descriptions || '');
+            settitle(res.data.title),
+            setAuthor(res.data.author),
+            setpublishYera(res.data.publishYera),
+            setLanguage(res.data.language),
+            setDescriptions(res.data.Descriptions) ;
           })
           .catch(err => {
             console.log(err);
           });
       }, [id]);
       
-        const updateBook = (e) => {
-            e.preventDefault();
-            axios.patch(`http://localhost:8000/api/book/edit/${id}`, {
-              title:title,
-              author:author,
-              publishYera:publishYera,
-              language:language,
-              Descriptions:Descriptions
-
-            })
-            .then(res => {
-              console.log(res);
-              navigate("/list");
-            })
-            .catch(err => console.log(err));
-          }
+      const updateBook = (e) => {
+        e.preventDefault();
+        axios.patch(`http://localhost:8000/api/book/edit/${id}`, {
+          title,
+          author,
+          publishYera,
+          language,
+          Descriptions
+        }, { withCredentials: true })
+        .then(res => {
+          console.log(res);
+          navigate("/list");
+        })
+        .catch(err => {
+          console.log(err);
+          
+        });
+      }
+      
     return(
+      
         <div className="container">
+          <Logout></Logout>
+     <Link  to="/list"className="btn btn-primary btn-lg" style={{position:"relative", left:'40%', bottom:"46px"}}>List Of Book</Link>
         <form onSubmit={updateBook} className="row g-3 justify-content-center">
        <div className="col-lg-6 d-grid ">
        <label htmlFor="" className="form-label" placeholder="Enter"> Book Name</label>

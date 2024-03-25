@@ -8,7 +8,6 @@ import Logout from "./Logout";
 
 const BookList = (props) => {
   const { BookDetails, setBookDetails } = props;
-
   useEffect(() => {
     axios.get('http://localhost:8000/api/book',{withCredentials:true})
       .then((res) => {
@@ -17,15 +16,16 @@ const BookList = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  },  [BookDetails]);
-  useEffect(() => {
-    console.log('BookDetails in BookList:', BookDetails); 
-  }, [BookDetails]); 
-
+  },
+    []);
+  
+  
   return (
 
     <div className="container ">
+       <h1>Welcome to Book Club</h1>
      <Logout></Logout>
+     <Link  to="/"className="btn btn-primary btn-lg" style={{position:"relative", left:'40%', bottom:"46px"}}>Add Book</Link>
       <table className="table table-striped table-responsive align-middle table-hover
        ">
         <thead className="text-center bg-dark">
@@ -53,7 +53,7 @@ const BookList = (props) => {
                   <AiOutlineEdit  style={{color:"orange", fontSize:"20px"}}></AiOutlineEdit>
               </Link>
               <Link to={"/book/"+ Book._id}>
-  <MdOutlineDelete style={{ color: 'red', fontSize: '20px' , marginLeft:"14px"}} />
+             <MdOutlineDelete style={{ color: 'red', fontSize: '20px' , marginLeft:"14px"}} />
 </Link>
 
               </td>

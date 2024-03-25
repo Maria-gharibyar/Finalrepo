@@ -24,7 +24,8 @@ const BookSchema=new mongoose.Schema({
         Descriptions:{
             type:String,
             minlength:[5,"The description lenght must be 5 characters"]
-        }
+        },
+        creator:{type:mongoose.Schema.Types.ObjectId, ref : 'Uesr'}
 
         
 },{timestamps:true})

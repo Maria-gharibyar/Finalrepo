@@ -3,10 +3,10 @@ const express=require('express');
 const cors=require('cors');
 
 const cookieParser = require('cookie-parser');
-// const myFirstSecret = process.env.FIRST_SECRET_KEY;
+
 const app=express();
 app.use(cookieParser());
-// Change the app.use(cors()) to the one below
+
 app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
 
 app.use(express.json())

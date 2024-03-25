@@ -1,6 +1,7 @@
+const { authenticate } = require('../config/jwt.config');
 const bookController=require('../controller/Book.controller');
 const getBook='/api/book';
-const { authenticate } = require('../config/jwt.config');
+
 module.exports=app=>{
     app.post('/api/book',authenticate,bookController.createBook)
     app.get(getBook,authenticate,bookController.getBook)

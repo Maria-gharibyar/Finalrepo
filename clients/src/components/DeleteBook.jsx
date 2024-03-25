@@ -6,7 +6,7 @@ const DeleteBook=()=>{
     const navigate=useNavigate()
     const {id}=useParams()
     const handleBook=()=>{
-        axios.delete(`http://localhost:8000/api/book/${id}`)
+        axios.delete(`http://localhost:8000/api/book/${id}`,{withCredentials:true})
         .then(()=>{
             navigate('/list')
         })

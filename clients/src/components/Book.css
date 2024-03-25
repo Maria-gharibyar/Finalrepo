@@ -9,11 +9,10 @@
     font-weight: 400;
     font-style: normal;
     color:  #333333;
-    margin-top: 100px;
+    
     
 }
 .row{
-  
    width: 60vw;
    
 }
@@ -133,7 +132,7 @@ font-family: "Madimi One", sans-serif;
     justify-content: center;
    line-height: 3;
    position: absolute;
-   top:40%;
+   top:44%;
    left: 12%;
     
  }

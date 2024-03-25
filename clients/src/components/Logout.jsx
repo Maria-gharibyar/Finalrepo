@@ -1,9 +1,9 @@
 import axios from "axios"
-import { useNavigate } from "react-router-dom"
+
 const Logout=()=>{
-    const navigate=useNavigate()
+
         const LogOut=()=>{
-            axios.post('http://localhost:8000/logout',{},{withCredentials:true})
+            axios.post('http://localhost:8000/api/logout',{},{withCredentials:true})
             .then(res=>{
                 localStorage.removeItem('userId')
                 window.location.reload( )
@@ -14,7 +14,7 @@ const Logout=()=>{
             
         }
     return(
-       <button onClick={LogOut}>Log out</button>
+       <button  className="btn btn-danger btn-lg " onClick={LogOut} style={{position:"relative", left:'50%'}}>Log out</button>
     )
 }
 export default Logout
